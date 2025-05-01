@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body{
+        background-color: blue;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+       }
+    </style>
+</head>
+<body>
+    <script>
+        function checkPalindrome(wordToTest){
+            cleanedWord = wordToTest.replace(/\s/g, "").toLowerCase();
+
+            //cleanedWord = wordToTest.replace(/\s/g, "");
+            //cleanedWord = cleanedWord.toLowerCase();
+
+            var reversedWord = cleanedWord.split("").reverse().join("");
+             //cleaned and reverse are ture, itll show true
+             //if not itll show false
+            return cleanedWord == reversedWord;
+        }
+
+            console.log("radar=" + checkPalindrome ("radar"));
+            console.log("tag=" + checkPalindrome ("tag"));
+            console.log("A man a plan a canal panama=" + checkPalindrome ("A man a plan a canal panama"));
+        // will track if user wants to keep entering words
+            var bContinue = true;
+
+            do{
+                //this will check if word is palindrome
+                var userInput = prompt("Enter a word to test if it is a palindrome: ");
+                var isPalindrome = checkPalindrome(userInput);
+                if(isPalindrome){
+                    alert(userInput + "is a palindrome");
+                }
+
+                else{
+                    alert(userInput + "is NOT a palindrome");
+                }
+                //this will check with user if they want to stop or continue
+                var answer = prompt("Do you want to continue? y/n");
+                if(answer.toLowerCase() == "n"){
+                    bContinue = false; 
+                }
+
+        
+            }while(bContinue); //this will continue the code
+    </script>
+</body>
+</html>
